@@ -1,0 +1,20 @@
+<section class="todos-page">
+  <header class="todos-page__header">
+    <h3>Todos List</h3>
+  </header>
+
+  @if(!todoItems().length){
+  <p class="todos-page__status">Loading...</p>
+  }
+
+  <form class="todos-page__filter">
+    <label for="searchTerm">Filter Todos</label>
+    <input id="searchTerm" name="searchTerm" [(ngModel)]="searchTerm" placeholder="Search Todos..." />
+  </form>
+
+  <ul class="todos">
+    @for (todo of todoItems() | filterTodos : searchTerm(); track todo.id){
+    <app-todo-items (todoToggled)="updateTodoItem($event)" [todo]="todo" />
+    }
+  </ul>
+</section>

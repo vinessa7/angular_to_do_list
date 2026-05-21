@@ -1,0 +1,10 @@
+<section class="counter">
+  <p class="counter__label">Counter value</p>
+  <strong class="counter__value">{{counterValue()}}</strong>
+
+  <div class="counter__actions">
+    <button type="button" aria-label="Decrease counter" (click)="decrement()">-</button>
+    <button type="button" (click)="reset()">Reset</button>
+    <button type="button" aria-label="Increase counter" (click)="increment()">+</button>
+  </div>
+</section>
